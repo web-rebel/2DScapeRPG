@@ -18,7 +18,7 @@ namespace Engine.ViewModels
                 Name = "Richard",
                 CharacterClass = "Wizard",
                 HitPoints = 10,
-                ExperiencePoints = 0,
+                ExperiencePoints = 10,
                 Level = 1,
                 Gold = 10
             };

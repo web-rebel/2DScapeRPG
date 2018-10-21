@@ -6,12 +6,12 @@ namespace Engine.ViewModels
     public class GameSession
     {
         public Player CurrentPlayer { get; set; }
+        public Location CurrentLocation { get; set; }
 
         public GameSession()
         {
             /**
-             * This is a test player object.  
-             * The player will be loaded from disk or other in future
+             * Player Object
              */
             CurrentPlayer = new Player
             {
@@ -23,6 +23,14 @@ namespace Engine.ViewModels
                 Gold = 10
             };
 
+            CurrentLocation = new Location
+            {
+                XCoordinate = 0,
+                YCoordinate = -1,
+                Name = "Home",
+                Description = "This is your home.",
+                ImageName = "/Engine;component/Images/Locations/Home.png"
+            };
         }
     }
 }

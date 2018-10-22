@@ -1,5 +1,6 @@
 ﻿
 using Engine.Models;
+using Engine.Factories;
 
 namespace Engine.ViewModels
 {
@@ -7,30 +8,26 @@ namespace Engine.ViewModels
     {
         public Player CurrentPlayer { get; set; }
         public Location CurrentLocation { get; set; }
+        public World CurrentWorld { get; set; }
+        
 
         public GameSession()
         {
-            /**
-             * Player Object
-             */
+           
             CurrentPlayer = new Player
             {
                 Name = "Richard",
                 CharacterClass = "Wizard",
                 HitPoints = 10,
-                ExperiencePoints = 10,
+                ExperiencePoints = 0,
                 Level = 1,
                 Gold = 10
             };
 
-            CurrentLocation = new Location
-            {
-                XCoordinate = 0,
-                YCoordinate = -1,
-                Name = "Home",
-                Description = "This is your home.",
-                ImageName = "/Engine;component/Images/Locations/Home.png"
-            };
+            WorldFactory factory = new WorldFactory();
+            CurrentWorld = factory.CreateWorld();
+
+            CurrentLocation = CurrentWorld.LocationAt(0,0);
         }
     }
 }

@@ -10,7 +10,8 @@ namespace Engine.ViewModels
         public event PropertyChangedEventHandler PropertyChanged;
         private Location _currentLocation;
 
-        public Player CurrentPlayer { get; set; }
+        public Player CurrentPlayer
+        { get; set; }
         public World CurrentWorld { get; set; }
         
         public Location CurrentLocation

@@ -15,7 +15,7 @@ namespace Engine.Models
             Location location = new Location
             {
                 XCoordinate = xCoordinate,
-                YCoordinate = yCoordinate,
+                YCoordinate = yCoordinate,               
                 Name = name,
                 Description = description,
                 ImageName = imageName

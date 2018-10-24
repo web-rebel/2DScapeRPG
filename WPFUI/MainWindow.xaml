@@ -166,6 +166,7 @@
 
         <Grid Grid.Row="2" Grid.Column="0" Background="BurlyWood">
             <TabControl>
+                
                 <TabItem Header="Inventroy">
                     <DataGrid 
                         AutoGenerateColumns="false"
@@ -182,6 +183,24 @@
                                 Binding="{Binding Price}"
                                 Width="Auto">
                             </DataGridTextColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </TabItem>
+
+                <TabItem Header="Quests">
+                    <DataGrid
+                        AutoGenerateColumns="false"
+                        HeadersVisibility="Column"
+                        ItemsSource="{Binding CurrentPlayer.Quests}">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn 
+                                Header="Name"
+                                Binding="{Binding PlayerQuest.Name}"
+                                Width="*"/>
+                            <DataGridTextColumn
+                                Header="Done?"
+                                Binding="{Binding IsCompleted}"
+                                Width="Auto"/>
                         </DataGrid.Columns>
                     </DataGrid>
                 </TabItem>
